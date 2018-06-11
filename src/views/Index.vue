@@ -1,12 +1,10 @@
 <template>
-  <div id="app">
+  <div>
     <app-header></app-Header>
     <div class="wrapper">
       <app-sidebar></app-sidebar>
       <div class="frame_content" >
-        <transition @enter="onEnter" @leave="onLeave">
           <router-view></router-view>
-        </transition>
       </div>
     </div>
   </div>

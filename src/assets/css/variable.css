@@ -1,18 +1,18 @@
 @charset "utf-8";
 :root {
-  --color-primary: #008fbf;
+  --color-primary: #333366;
 /*// #1F2D3D*/
   --color-success: #5aab5a;
   --color-warning: #e4c17e;
-  --color-danger: #f65656;
+  --color-danger: #990033;
   --color-info: #8895af;
   --color-blue: #2e90fe;
   --color-blue-light: #5da9ff;
   --color-blue-lighter: rgba(var(--color-blue), 0.12);
   --color-white: #fff;
   --color-black: #000;
-  --color-grey: #C0CCDA;
-  --color-secondary: #999;
+  --color-grey: #ccc;
+  --color-secondary: #666;
 
   /* 融合色 */
   --blend-color: #fff;

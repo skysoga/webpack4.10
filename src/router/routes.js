@@ -1,17 +1,27 @@
-import Index from '@/views/Index'
-import Cmanage from '@/views/index/Index'
+import IndexAdmin from '@/views/index/Index'
 import Login from '@/views/login/Index'
 import LoginPage from '@/views/login/Login'
 
 const router = [{
-  path: '/admin',
-  component: Index,
+  path: '/',
+  component: resolve => import('@/views/Index'),
   children: [{
-    path: '/',
-    component: Cmanage
+    path: '/site',
+    component: resolve => import('@/views/index/SidebarIndex'), // 右侧内容块入口，分有sidebar和无
+    children: [
+      {
+        path: 'lottery',
+        name: 'lottery',
+        component: resolve => import('@/views/site/LotteryHot')
+      }, {
+        path: 'logo',
+        name: 'logo',
+        component: resolve => import('@/views/site/LotteryHot')
+      }
+    ]
   }, {
-    path: '/abcd',
-    component: Cmanage
+    path: '/',
+    component: resolve => import('@/views/DashBoard'),
   }]
 }, {
   path: '/login',

@@ -1,5 +1,6 @@
 'use strict'
 const path = require('path')
+const Usercfg = require('./usercfg.js')
 
 module.exports = {
   build: { // production 环境
@@ -36,7 +37,17 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/Base/ProcessRequest': {
+        target: Usercfg.APIhost,
+        changeOrigin: true,
+        headers: {Origin:Usercfg.Origin||"http://ad.dafatest.com"},
+        secure: true,
+        pathRewrite: {
+          '^/base': ''
+        }
+      }
+    },
 
     //这里输入自己电脑的固定ip和要设置的监听端口   端口注意不要和别的再使用的冲突
     host: 'localhost', // can be overwritten by process.env.HOST

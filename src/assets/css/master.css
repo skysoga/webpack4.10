@@ -52,15 +52,15 @@ img {
   z-index: 1000;
   background: var(--t-logo);
   background-size: contain;
-  padding-left: 72px;
+  padding-left: 60px;
   height: 50px;
-  background-size: 60px;
+  background-size: 48px;
   color: #fff;
   display: flex;
   height: 100%;
   white-space: nowrap;
   align-items: center;
-  font-size: 18px;
+  font-size: 16px;
 }
 .menu {
     margin: 0;
@@ -382,33 +382,11 @@ img {
   }
 }
 /*-----------过滤条件------------*/
-.filters {
-  background: #fff;
-  & .menu li a.active {
-    color: var(--color-primary);
-  }
-  & .menu li a {
-    position: relative;
-    &:before{
-      content: '';
-      display: block;
-      position: absolute;
-      height: 2px;
-      width: 0;
-      background: var(--color-primary);
-      left: 50%;
-      bottom: -1px;
-      transition: width .3s,left .3s;
-    }
-    &:hover:before,&.router-link-exact-active:before {
-      left: 0;
-      width: 100%;
-    }
-  }
-  & .filters_btn{
-    text-align: right;
-    margin: 6px 10px 0 0;
-  }
+.filters , .lottery-area .mod-head{
+  background: #eee;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-width: 1px 1px 0 1px;
 }
 .mod-border {
   border: 1px solid;
@@ -442,4 +420,38 @@ img {
 .flex-center {
   display: flex;
   justify-content: space-between;
+}
+
+/*content-manage*/
+.panel-heading {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 0 20px;
+  font-size: 16px;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  font-weight: bold;
+  & a:not(button){
+    color: #cbd3dd;
+  }
+}
+.panel-body {
+  padding: 30px 20px;
+  min-height: 250px;
+  height: -moz-calc(100vh - 120px);
+  height: -webkit-calc(100vh - 120px);
+  height: calc(100vh - 120px);
+  overflow: auto;
+  width: 100%;
+}
+.panel-body .is-hidden{
+  display: table-cell !important;
+}
+.product-con{
+  position: absolute;
+  left: 190px;
+  top: 0;
+  right: 0;
+  height: 100%;
+  transition: left .3s,transform .3s;
 }

@@ -1,13 +1,14 @@
 import Vue from 'vue'
 // import VueResource from 'vue-resource'
-//
-// Vue.use(VueResource)
+import axios from 'axios'
+
+axios.defaults.headers.common['token'] = ''
+axios.defaults.headers.post['Content-type'] = 'application/x-www-form-urlencoded'
+
+Vue.use(axios)
+
 const Api = {
-  databaseUrl: '/api/article/',
-  oneArticle: '/api/catalog/:caId/article/:arId',
-  moreArticle: '/api/catalog/:caId/article/',
-  catalogUrl: '/api/catalog/list',
-  loginIn: '/api/user/login'
+  databaseUrl: '/api/'
 }
 
 export function fetchArticle (param) {
